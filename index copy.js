@@ -37,7 +37,7 @@ function createTemplate(layers){
 
 const takenNames = {};
 const takenFaces = {};
-let idx = 49;
+let idx = 9;
 
 
 function randInt(max) {
