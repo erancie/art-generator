@@ -29,7 +29,11 @@ function createTemplate(layers){
 
     layers.forEach((layer, i) => {
         newTemplate.replace(`<!-- ${i} -->`, getLayer(`${layer}`))
-        //or try appending to <!-- 0 -->` to avoid placeholder markup
+        //or try appending to <!-- 0 -->` to avoid placeholder markup?
+
+        //IF layer 2 attribute - put attribute 2 inclusion conditional in createImage 'character' branch
+            //getLayer(`${layer}`, `${skipRate}`)
+
     })
 
     return newTemplate
@@ -37,7 +41,7 @@ function createTemplate(layers){
 
 const takenNames = {};
 const takenFaces = {};
-let idx = 9;
+let idx = 100;
 
 
 function randInt(max) {
@@ -103,12 +107,18 @@ function createImage(idx, character) {
         const nose = randInt(2); 
         const mouth = randInt(2);
         const ears = randInt(2);
+        
+        //TODO: handle lvl 2 attributes - here or createTemplate() ??
+
+        // skip = rnd()
+        //IF lvl 2 attr !skip THEN add to 'face' for template
+        //
 
         //level 2
         //hat 
         //earrings
         //lollipop
-        //
+
 
         //6531 combinations
 
@@ -118,6 +128,12 @@ function createImage(idx, character) {
         //creates unique number representing combination
         face = [body, head, hair, eyes, nose, mouth, ears].join('');  
     }
+
+    if(character = 'minataur'){
+        
+        //body arms head horns
+    }
+
 
     // if(character = 'element'){
         //   layerNames = []
@@ -138,7 +154,7 @@ function createImage(idx, character) {
 
         //beacuse im inputing different charcters, i needed to handle different no. of attributes
             //create an array that lists attributes (randomise each attr)
-            //create function that makes template from attributes list
+            //create function that makes template from layer names
         const template = createTemplate(layerNames)
 
         const meta = {
@@ -184,6 +200,14 @@ do {
     }
     idx--;
   } while (idx >= 0);
+
+
+  
+//CREATE program/function that converts elemetns into animals
+
+
+
+
 
 
 
